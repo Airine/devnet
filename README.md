@@ -35,6 +35,7 @@ After stop the running node: (Be carefull! This command would remove all the sto
 docker container prune
 ```
 
+# Pi set up
 
 The easy web gui is at http://[ip to raspberry pi]/ (default: http://192.168.1.241), access code is goodforwifi
 ```
@@ -43,7 +44,7 @@ su
 cd ~
 ```
 
-## Set up
+## Start
 
 ```
 ./run_proxy.sh
