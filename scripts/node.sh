@@ -9,6 +9,8 @@ cp -R /keystore $datadir
 
 geth --datadir $datadir \
      --networkid "19990119" \
+     --miner.gastarget 0 \
+     --miner.gasprice 0 \
      --rpc --rpcaddr '0.0.0.0' --rpcport 8545 --rpccorsdomain '*' --rpcapi 'admin,db,eth,miner,net,web3,personal,txpool' \
      --ws --wsaddr '0.0.0.0' --wsport 8546 --wsorigins '*' \
      --unlock $addresses \

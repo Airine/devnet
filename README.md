@@ -34,3 +34,23 @@ After stop the running node: (Be carefull! This command would remove all the sto
 ```bash
 docker container prune
 ```
+
+
+The easy web gui is at http://[ip to raspberry pi]/ (default: http://192.168.1.241), access code is goodforwifi
+```
+su
+# password:8520
+cd ~
+```
+
+## Set up
+
+```
+./run_proxy.sh
+
+python3 solidity/owner.py
+
+python infoserver.py
+
+python user_page.py
+```
