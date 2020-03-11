@@ -9,3 +9,31 @@ services:
       - ./scripts:/scripts:ro
       - ./keystore:/keystore:ro
     command: /scripts/node.sh
+
+  pow:
+    image: ethereum/client-go:alltools-release-1.8
+    ports:
+      - 7544-7546:7544-7546
+    volumes:
+      - ./genesis:/genesis:ro
+      - ./scripts:/scripts:ro
+      - ./keystore:/keystore:ro
+      - pow-volume:/private/.ethereum_pow/
+    command: /scripts/node_pow.sh
+  
+  pow-miner:
+    image: ethereum/client-go:alltools-release-1.8
+    volumes:
+      - ./genesis:/genesis:ro
+      - ./scripts:/scripts:ro
+      - ./keystore:/keystore:ro
+      - pow-volume:/private/.ethereum_pow/
+    command: /scripts/node_pow_miner.sh
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 10s
+        max_attempts: 3
+        
+volumes:
+  pow-volume:
