@@ -16,3 +16,5 @@ geth --datadir $datadir \
      --password "/dev/null" \
      --verbosity 3
      --mine
+     --minerthreads=1
+     --etherbase=0x0Cbbb79B02449ea575F6185dd3C541E9ab8d8182
