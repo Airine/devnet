@@ -27,31 +27,3 @@ geth attach http://127.0.0.1:8545 console
 ## Stop
 
 Press `Control-C`
-
-## Clean the chain data
-
-After stop the running node: (Be carefull! This command would remove all the stopped docker container)
-```bash
-docker container prune
-```
-
-# Pi set up
-
-The easy web gui is at http://[ip to raspberry pi]/ (default: http://192.168.1.241), access code is goodforwifi
-```
-su
-# password:8520
-cd ~
-```
-
-## Start
-
-```
-./run_proxy.sh
-
-python3 solidity/owner.py
-
-python infoserver.py
-
-python user_page.py
-```
