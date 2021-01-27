@@ -1,1 +1,1 @@
-sudo rm -rf /private/.ethereum
+rm -rf data
